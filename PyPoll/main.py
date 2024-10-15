@@ -3,12 +3,11 @@ import os
 import csv
 
 # open csv
+election_csv = os.path.join("PyPoll", "Resources", "election_data.csv")
 
-csvpath= "./PyPoll/Resources/election_data.csv"
 
-
-with open(csvpath, newline='') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
+with open(election_csv) as data:
+    csvreader = csv.reader(data)
     csv_header = next(csvreader)
     print(f"Header: {csv_header}")
     

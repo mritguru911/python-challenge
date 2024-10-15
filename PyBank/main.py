@@ -2,9 +2,10 @@
 import os
 import csv
 
-budget_csv = "./PyBank/Resources/budget_data.csv"
+#file path to input data
+data = os.path.join( "PyBank", "Resources", "budget_data.csv")
 
-with open(budget_csv, 'r') as csvfile:
+with open(data) as csvfile:
     reader = csv.reader(csvfile, delimiter = ",")
     next(reader)
 
@@ -61,6 +62,6 @@ output = (
 #print output to a file
 print(output)
 
-output_file = "./PyBank/analysis/results.txt"
-with open(output_file, "w") as f:
+output_path = os.path.join("PyBank", "analysis", "results.txt")
+with open(output_path, "w") as f:
     f.write(output)
